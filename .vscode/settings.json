@@ -11,5 +11,8 @@
         "iostream": "cpp",
         "random": "cpp",
         "new": "cpp"
+    },
+    "files.watcherExclude": {
+        "**/target": true
     }
 }
