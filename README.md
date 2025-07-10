@@ -1,11 +1,7 @@
 
 ```sh
 # https://www.chisel-lang.org/docs/installation
-sudo apt install -y openjdk-21-jdk gtkwave
-
-# 安装Scala-Cli (可选)
-# https://scala-cli.virtuslab.org/install/
-curl -sSLf https://scala-cli.virtuslab.org/get | sh
+sudo apt install -y openjdk-21-jdk gtkwave help2man make autoconf g++ flex bison ccache libgoogle-perftools-dev numactl perl-doc
 
 # 安装SBT
 # https://www.scala-sbt.org/download/
@@ -17,7 +13,6 @@ sudo apt install -y sbt
 
 # 安装Verilator
 # https://verilator.org/guide/latest/install.html#git-install
-sudo apt install -y help2man make autoconf g++ flex bison ccache libgoogle-perftools-dev numactl perl-doc
 git clone https://github.com/verilator/verilator && cd verilator
 autoconf && ./configure
 make -j `nproc`
