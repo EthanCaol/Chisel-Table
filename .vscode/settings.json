@@ -1,0 +1,15 @@
+{
+    "files.associations": {
+        "*.clr": "xml",
+        "*.fmj": "plaintext",
+        "*.4-ssa-opt.quad": "plaintext",
+        "*.4-xml.quad": "xml",
+        "*.4-xml.quad.my": "xml",
+        "*.4-ssa-xml.quad": "xml",
+        "*.6-ssa-prepared.clr.my": "xml",
+        "*.7-s.my": "arm",
+        "iostream": "cpp",
+        "random": "cpp",
+        "new": "cpp"
+    }
+}
