@@ -14,11 +14,11 @@ class Demo extends Module {
 
 object Main extends App {
     val verilog = ChiselStage.emitSystemVerilog(
-      new Demo,
-      firtoolOpts = Array(
-        "-disable-all-randomization",
-        "--strip-debug-info",
-      )
+        new Demo,
+        firtoolOpts = Array(
+            "-disable-all-randomization",
+            "--strip-debug-info"
+        )
     )
 
     val outputFile = new File("Demo.sv")
