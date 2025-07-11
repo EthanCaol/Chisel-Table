@@ -1,7 +1,13 @@
 
 ```sh
 # https://www.chisel-lang.org/docs/installation
-sudo apt install -y openjdk-21-jdk gtkwave help2man make autoconf g++ flex bison ccache libgoogle-perftools-dev numactl perl-doc
+sudo apt install -y openjdk-21-jdk gtkwave help2man make autoconf g++ flex bison ccache libgoogle-perftools-dev numactl perl-doc universal-ctags
+
+# 安装Scala-Cli
+# https://scala-cli.virtuslab.org/install
+curl -sSLf https://scala-cli.virtuslab.org/get | sh
+echo -e "\nalias scala-cli='scala-cli -Dhttp.proxyProtocol=http -Dhttp.proxyHost=127.0.0.1 -Dhttp.proxyPort=7890 -Dhttps.proxyProtocol=http -Dhttps.proxyHost=127.0.0.1 -Dhttps.proxyPort=7890'" >> ~/.bashrc
+echo -e '\nexport PATH="$PATH:$HOME/.cache/scalacli/local-repo/bin/scala-cli"' >> ~/.bashrc
 
 # 安装SBT
 # https://www.scala-sbt.org/download/
@@ -18,3 +24,8 @@ autoconf && ./configure
 make -j `nproc`
 sudo make install
 
+# 安装Verible
+# https://github.com/chipsalliance/verible/releases
+wget https://github.com/chipsalliance/verible/releases/download/v0.0-4007-g98bdb38a/verible-v0.0-4007-g98bdb38a-linux-static-x86_64.tar.gz
+tar -xvf verible-v0.0-4007-g98bdb38a-linux-static-x86_64.tar.gz
+sudo mv verible-v0.0-4007-g98bdb38a /usr/local/verible
