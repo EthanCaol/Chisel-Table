@@ -2,7 +2,7 @@ import chisel3._
 import circt.stage.ChiselStage
 import java.io.{File, PrintWriter}
 
-class Demo extends Module {
+class And extends Module {
     val io = IO(new Bundle {
         val a = Input(Bool())
         val b = Input(Bool())
@@ -12,16 +12,16 @@ class Demo extends Module {
     io.out := io.a & io.b
 }
 
-object Main extends App {
+object And extends App {
     val verilog = ChiselStage.emitSystemVerilog(
-        new Demo,
+        new And,
         firtoolOpts = Array(
             "-disable-all-randomization",
             "--strip-debug-info"
         )
     )
 
-    val outputFile = new File("Demo.sv")
+    val outputFile = new File("And.sv")
     val writer = new PrintWriter(outputFile)
     writer.write(verilog)
     writer.close()

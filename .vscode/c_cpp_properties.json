@@ -4,7 +4,6 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/obj_dir",
                 "/usr/local/share/verilator/include",
                 "/usr/local/share/verilator/include/vltstd"
             ],

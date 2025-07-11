@@ -1,4 +1,4 @@
-#include "VDemo.h"
+#include "VAnd.h"
 #include "verilated.h"
 #include "verilated_vcd_c.h"
 #include <iostream>
@@ -8,11 +8,11 @@ int main(int argc, char** argv)
     Verilated::commandArgs(argc, argv);
     Verilated::traceEverOn(true);
 
-    VDemo* top = new VDemo;
+    VAnd* top = new VAnd;
     VerilatedVcdC* vcd = new VerilatedVcdC;
 
     top->trace(vcd, 99);
-    vcd->open("Demo.vcd");
+    vcd->open("And.vcd");
 
     int time = 0;
     top->io_a = 0;

@@ -4,11 +4,11 @@ all: run view
 
 run:
 	sbt run
-	verilator -Wall --cc Demo.sv --exe Demo.cpp --trace -Wno-UNUSEDSIGNAL
-	cd obj_dir && make -s -j -f VDemo.mk VDemo && ./VDemo
+	verilator -Wall --cc And.sv --exe And.cpp --Mdir bin --trace -Wno-UNUSEDSIGNAL
+	cd bin && make -s -j -f VAnd.mk VAnd && ./VAnd
 
 view:
-	gtkwave obj_dir/Demo.vcd
+	gtkwave bin/And.vcd
 
 clean:
-	rm -rf obj_dir Demo.sv
+	rm -rf bin And.sv
