@@ -10,24 +10,36 @@ import chisel3.util._
 import java.io.{File, PrintWriter}
 
 object Main extends App {
-    class And extends RawModule {
+    class Encode42 extends RawModule {
         val io = IO(new Bundle {
-            val a = Input(Bool())
-            val b = Input(Bool())
-            val out = Output(Bool())
+            val en = Input(Bool())
+            val in = Input(UInt(4.W))
+            val out = Output(UInt(2.W))
         })
-        io.out := io.a & io.b
+
+        io.out := Mux(
+            io.en,
+            MuxLookup(io.in, 0.U)(
+                Seq(
+                    0x1.U -> 0.U,
+                    0x2.U -> 1.U,
+                    0x4.U -> 2.U,
+                    0x8.U -> 3.U
+                )
+            ),
+            0.U
+        )
     }
 
     val verilog = ChiselStage.emitSystemVerilog(
-        new And,
+        new Encode42,
         firtoolOpts = Array(
             "-disable-all-randomization",
             "--strip-debug-info"
         )
     )
 
-    val writer = new PrintWriter(new File("And.sv"))
+    val writer = new PrintWriter(new File("Encode42.sv"))
     writer.write(verilog)
     writer.close()
 }

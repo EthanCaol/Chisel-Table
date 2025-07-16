@@ -10,7 +10,10 @@
         "*.7-s.my": "arm",
         "iostream": "cpp",
         "random": "cpp",
-        "new": "cpp"
+        "new": "cpp",
+        "array": "cpp",
+        "string": "cpp",
+        "string_view": "cpp"
     },
     "files.watcherExclude": {
         "**/target": true

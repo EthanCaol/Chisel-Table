@@ -2,7 +2,7 @@ import chisel3._
 import circt.stage.ChiselStage
 import java.io.{File, PrintWriter}
 
-class And extends Module {
+class And extends RawModule {
     val io = IO(new Bundle {
         val a = Input(Bool())
         val b = Input(Bool())
