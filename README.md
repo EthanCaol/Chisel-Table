@@ -1,7 +1,7 @@
 
 ```sh
 # https://www.chisel-lang.org/docs/installation
-sudo apt install -y openjdk-21-jdk gtkwave help2man make autoconf g++ flex bison ccache libgoogle-perftools-dev numactl perl-doc universal-ctags
+sudo apt install -y openjdk-21-jdk gtkwave help2man make autoconf g++ flex bison ccache libgoogle-perftools-dev numactl perl-doc universal-ctags zlib1g-dev
 
 # 安装Scala-Cli
 # https://scala-cli.virtuslab.org/install
@@ -29,3 +29,10 @@ sudo make install
 wget https://github.com/chipsalliance/verible/releases/download/v0.0-4007-g98bdb38a/verible-v0.0-4007-g98bdb38a-linux-static-x86_64.tar.gz
 tar -xvf verible-v0.0-4007-g98bdb38a-linux-static-x86_64.tar.gz
 sudo mv verible-v0.0-4007-g98bdb38a /usr/local/verible
+
+# 安装iStyle
+# https://github.com/thomasrussellmurphy/istyle-verilog-formatter
+git clone https://github.com/thomasrussellmurphy/istyle-verilog-formatter.git
+cd istyle-verilog-formatter && mkdir build && cd build
+cmake .. && make -j `nproc`
+sudo mv bin/istyle /usr/bin/iStyle
